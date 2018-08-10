@@ -208,10 +208,10 @@ class ReviewList extends React.Component {
       reviews: [],
       hasData: false,
     } 
-    // let hasData = false;
   }
 
   componentDidMount() {
+    console.log('what')
     axios.get('/api/reviews')
     .then(result => {
       this.setState({reviews: result.data}) 

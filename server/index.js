@@ -6,6 +6,9 @@ const helmet = require('helmet');
 const routes = require('./routes')
 require('dotenv').config()
 
+require('../database/index');
+require('../database/models')
+
 // const db = require('db')
 // db.connect({
 //   host: process.env.DB_HOST,
@@ -13,7 +16,7 @@ require('dotenv').config()
 //   password: process.env.DB_PASS
 // })
 
-const port = 3010;
+const port = 4001;
 const server = express();
 
 server.use(helmet());
@@ -25,3 +28,6 @@ server.use(parser.urlencoded({extended: false}));
 server.use('/api/reviews', routes);
 
 server.listen(port, () => console.log(`Server is listening on port ${port}`));
+
+
+
